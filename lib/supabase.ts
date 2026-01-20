@@ -27,7 +27,7 @@ async function reverseGeocode(lat: number, lon: number): Promise<string> {
       return city && state ? `${city}, ${state}` : city || state || `Location ${lat.toFixed(4)}, ${lon.toFixed(4)}`;
     }
   } catch (error) {
-    if (error.name !== 'AbortError') {
+    if (error instanceof Error && error.name !== 'AbortError') {
       console.error('Geocoding error:', error);
     }
   }
