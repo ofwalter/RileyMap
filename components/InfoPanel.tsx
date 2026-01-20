@@ -60,7 +60,7 @@ export default function InfoPanel({ isOpen, onClose }: InfoPanelProps) {
                 mouse wheel to zoom in and out.
               </li>
               <li>
-                <strong>View Locations:</strong> When zoomed out (zoom level &lt; 11), you'll see 
+                <strong>View Locations:</strong> When zoomed out (zoom level &lt; 11), you&apos;ll see 
                 location markers showing collection sites. Click a location marker to zoom in and 
                 view individual jars.
               </li>
