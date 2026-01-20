@@ -1,42 +1,6 @@
--- Imported from CSV: Crayfish Trog 2025-2026 - Raw Data.csv
--- Generated: 2026-01-15T18:52:27.445Z
--- Groups individual specimens by location (lat/lon) and collection date into jars
-
-INSERT INTO jars (
-    jar_code,
-    lat,
-    lon,
-    collection_date,
-    total_crayfish,
-    num_males,
-    num_females,
-    infected_bd,
-    infected_mc_l,
-    infected_mc_s,
-    infected_acanth
-) VALUES (
-    'CT68_81',
-    32.84103,
-    -80.12437,
-    '2023-09-26',
-    3,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-) ON CONFLICT (jar_code) DO UPDATE SET
-    lat = EXCLUDED.lat,
-    lon = EXCLUDED.lon,
-    collection_date = EXCLUDED.collection_date,
-    total_crayfish = EXCLUDED.total_crayfish,
-    num_males = EXCLUDED.num_males,
-    num_females = EXCLUDED.num_females,
-    infected_bd = EXCLUDED.infected_bd,
-    infected_mc_l = EXCLUDED.infected_mc_l,
-    infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+-- Imported from CSV: Crayfish Trog 2025-2026 - SORTED FOR MAP.csv
+-- Generated: 2026-01-20T19:38:45.941Z
+-- Groups individual specimens by jar code (or location/date) into jars
 
 INSERT INTO jars (
     jar_code,
@@ -56,47 +20,11 @@ INSERT INTO jars (
     -80.12437,
     '2019-05-01',
     11,
-    5,
-    6,
+    4,
+    7,
     0,
-    8,
-    8,
-    0
-) ON CONFLICT (jar_code) DO UPDATE SET
-    lat = EXCLUDED.lat,
-    lon = EXCLUDED.lon,
-    collection_date = EXCLUDED.collection_date,
-    total_crayfish = EXCLUDED.total_crayfish,
-    num_males = EXCLUDED.num_males,
-    num_females = EXCLUDED.num_females,
-    infected_bd = EXCLUDED.infected_bd,
-    infected_mc_l = EXCLUDED.infected_mc_l,
-    infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
-
-INSERT INTO jars (
-    jar_code,
-    lat,
-    lon,
-    collection_date,
-    total_crayfish,
-    num_males,
-    num_females,
-    infected_bd,
-    infected_mc_l,
-    infected_mc_s,
-    infected_acanth
-) VALUES (
-    'Cray2019_224',
-    32.84103,
-    -80.12437,
-    '2019-05-04',
-    1,
-    0,
-    1,
-    0,
-    1,
-    1,
+    7,
+    3,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -127,12 +55,12 @@ INSERT INTO jars (
     33.758077,
     -80.058477,
     '2019-05-04',
-    23,
-    7,
-    16,
-    1,
+    12,
+    4,
+    8,
+    0,
     3,
-    17,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -159,7 +87,7 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
-    'cray2019_314',
+    'Cray2019_314',
     32.44488,
     -79.520632,
     '2019-05-20',
@@ -195,7 +123,7 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
-    'Cray2019_338',
+    'Cray2019_388',
     33.284252,
     -79.616924,
     '2019-05-25',
@@ -203,8 +131,8 @@ INSERT INTO jars (
     9,
     4,
     0,
-    10,
-    10,
+    2,
+    3,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -231,7 +159,7 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
-    'Craay2019_194',
+    'Cray2019_194',
     33.13923,
     -80.950847,
     '2019-05-04',
@@ -239,8 +167,8 @@ INSERT INTO jars (
     2,
     2,
     3,
-    4,
-    3,
+    2,
+    1,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -383,7 +311,7 @@ INSERT INTO jars (
     0,
     2,
     0,
-    2,
+    0,
     0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
@@ -420,7 +348,7 @@ INSERT INTO jars (
     1,
     0,
     1,
-    2,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -447,7 +375,7 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
-    'Cray2019_?',
+    'CT_055',
     33.244488,
     -79.520632,
     '2019-05-25',
@@ -456,7 +384,7 @@ INSERT INTO jars (
     0,
     1,
     1,
-    3,
+    2,
     1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -526,8 +454,8 @@ INSERT INTO jars (
     2,
     1,
     1,
+    0,
     1,
-    2,
     0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
@@ -599,7 +527,7 @@ INSERT INTO jars (
     1,
     1,
     1,
-    1,
+    0,
     0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
@@ -671,8 +599,8 @@ INSERT INTO jars (
     4,
     1,
     2,
-    1,
-    1,
+    0,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -699,7 +627,7 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
-    'Cray2019_?',
+    'CT_075',
     33.231833,
     -79.480719,
     '2019-05-23',
@@ -707,9 +635,9 @@ INSERT INTO jars (
     4,
     3,
     1,
+    0,
     2,
-    4,
-    3
+    2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -888,7 +816,7 @@ INSERT INTO jars (
     0,
     0,
     0,
-    1,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -996,7 +924,7 @@ INSERT INTO jars (
     2,
     1,
     0,
-    2,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1031,8 +959,8 @@ INSERT INTO jars (
     1,
     2,
     0,
-    3,
-    2,
+    0,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1066,6 +994,42 @@ INSERT INTO jars (
     1,
     1,
     0,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_224',
+    33.758077,
+    -80.058478,
+    '2019-05-04',
+    12,
+    3,
+    9,
     0,
     0,
     0,
@@ -1176,7 +1140,7 @@ INSERT INTO jars (
     3,
     0,
     0,
-    3,
+    1,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1212,7 +1176,7 @@ INSERT INTO jars (
     7,
     0,
     0,
-    3,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1248,7 +1212,7 @@ INSERT INTO jars (
     3,
     0,
     0,
-    7,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1284,7 +1248,7 @@ INSERT INTO jars (
     2,
     0,
     0,
-    4,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1319,8 +1283,8 @@ INSERT INTO jars (
     3,
     1,
     0,
-    3,
-    1,
+    2,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1427,8 +1391,8 @@ INSERT INTO jars (
     8,
     6,
     0,
-    14,
     3,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1455,7 +1419,7 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
-    'Cray2019_343',
+    'Cray2019_278',
     32.844563,
     -80.124694,
     '2019-05-15',
@@ -1536,7 +1500,7 @@ INSERT INTO jars (
     7,
     0,
     0,
-    5,
+    3,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1644,7 +1608,763 @@ INSERT INTO jars (
     15,
     0,
     0,
+    2,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_459',
+    33.22996,
+    -79.48109,
+    '2019-10-03',
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_223',
+    32.827383,
+    -80.132628,
+    '2019-05-10',
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_497',
+    32.82577,
+    -80.12537,
+    '2019-10-08',
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_181',
+    32.83026,
+    -80.13232,
+    '2019-05-01',
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_202',
+    32.840846,
+    -80.122833,
+    '2019-05-02',
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_168',
+    32.335586,
+    -80.128438,
+    '2019-05-02',
+    5,
+    1,
+    4,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_195',
+    32.83155,
+    -80.128667,
+    '2019-05-01',
+    5,
+    2,
+    3,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_263',
+    32.831721,
+    -80.1348281,
+    '2019-05-10',
+    8,
+    3,
+    5,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_231',
+    32.83811,
+    -80.12578,
+    '2019-05-01',
+    4,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_185',
+    32.833412,
+    -80.129599,
+    '2019-05-02',
     10,
+    6,
+    4,
+    1,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_184',
+    32.836943,
+    -80.126328,
+    '2019-05-02',
+    12,
+    2,
+    10,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_232',
+    32.830534,
+    -80.134748,
+    '2019-05-10',
+    10,
+    3,
+    7,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_234',
+    32.825013,
+    -80.129726,
+    '2019-05-10',
+    11,
+    7,
+    4,
+    1,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_281',
+    32.835782,
+    -80.124814,
+    '2019-05-15',
+    4,
+    3,
+    1,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_290',
+    32.836622,
+    -80.130394,
+    '2019-05-15',
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_279',
+    32.835313,
+    -80.131682,
+    '2019-05-15',
+    4,
+    1,
+    3,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_106',
+    33.155547,
+    -79.767982,
+    '2019-09-10',
+    2,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_042',
+    32.61739,
+    -80.7094,
+    '2019-10-04',
+    6,
+    4,
+    2,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2021_004',
+    32.87707,
+    -81.42867,
+    '2021-01-26',
+    3,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_317',
+    33.244449,
+    -79.520621,
+    '2019-05-23',
+    6,
+    4,
+    2,
+    0,
+    0,
+    0,
+    1
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray_2019_566',
+    32.8152,
+    -80.1167,
+    '2019-12-08',
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -1659,7 +2379,34 @@ INSERT INTO jars (
     infected_acanth = EXCLUDED.infected_acanth;
 
 -- Statistics:
--- Total jars created: 46
--- Jars imported: 46
+-- Total jars created: 66
+-- Jars imported: 66
 -- Jars skipped: 0
+-- Errors encountered: 24
 
+
+-- Errors (first 50):
+--   Row 304: Invalid or missing coordinates (Spec: CT_306)
+--   Row 305: Invalid or missing coordinates (Spec: CT_307)
+--   Row 306: Invalid or missing coordinates (Spec: CT_308)
+--   Row 307: Invalid or missing coordinates (Spec: CT_309)
+--   Row 318: Invalid date format (Spec: CT_320)
+--   Row 319: Invalid date format (Spec: CT_321)
+--   Row 320: Invalid date format (Spec: CT_322)
+--   Row 321: Invalid date format (Spec: CT_323)
+--   Row 322: Invalid date format (Spec: CT_324)
+--   Row 323: Invalid date format (Spec: CT_325)
+--   Row 324: Invalid date format (Spec: CT_326)
+--   Row 325: Invalid date format (Spec: CT_327)
+--   Row 326: Invalid date format (Spec: CT_328)
+--   Row 327: Invalid date format (Spec: CT_329)
+--   Row 328: Invalid date format (Spec: CT_330)
+--   Row 329: Invalid date format (Spec: CT_331)
+--   Row 330: Invalid date format (Spec: CT_332)
+--   Row 331: Invalid date format (Spec: CT_333)
+--   Row 332: Invalid date format (Spec: CT_334)
+--   Row 333: Invalid date format (Spec: CT_335)
+--   Row 334: Invalid or missing coordinates (Spec: CT_336)
+--   Row 335: Invalid or missing coordinates (Spec: CT_337)
+--   Row 336: Invalid or missing coordinates (Spec: CT_338)
+--   Row 356: Invalid date format (Spec: CT_359)
