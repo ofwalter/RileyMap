@@ -362,8 +362,12 @@ export default function MapView() {
   // Use a threshold to prevent rapid switching
   const showLocationMarkers = mapZoom < 11;
   const jarsToShow = useMemo(() => {
-    if (!showLocationMarkers && selectedLocationId) {
-      return filteredJars.filter((jar) => jar.location?.id === selectedLocationId);
+    if (!showLocationMarkers) {
+      if (selectedLocationId) {
+        return filteredJars.filter((jar) => jar.location?.id === selectedLocationId);
+      } else {
+        return filteredJars;
+      }
     }
     return [];
   }, [showLocationMarkers, selectedLocationId, filteredJars]);
