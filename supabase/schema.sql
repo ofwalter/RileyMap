@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS jars (
     infected_mc_l INT NOT NULL DEFAULT 0,
     infected_mc_s INT NOT NULL DEFAULT 0,
     infected_acanth INT NOT NULL DEFAULT 0,
+    min_size FLOAT,
+    max_size FLOAT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );

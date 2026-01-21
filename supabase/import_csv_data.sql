@@ -1,5 +1,5 @@
 -- Imported from CSV: Crayfish Trog 2025-2026 - SORTED FOR MAP.csv
--- Generated: 2026-01-21T04:05:14.605Z
+-- Generated: 2026-01-21T18:56:10.601Z
 -- Groups individual specimens by jar code (or location/date) into jars
 
 INSERT INTO jars (
@@ -13,7 +13,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'CT68_81',
     32.8508,
@@ -25,7 +27,9 @@ INSERT INTO jars (
     0,
     0,
     2,
-    2
+    2,
+    22.93,
+    23.68
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -36,7 +40,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -49,7 +55,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_234',
     32.84103,
@@ -61,7 +69,9 @@ INSERT INTO jars (
     0,
     6,
     4,
-    0
+    0,
+    12.7,
+    23.3
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -72,7 +82,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -85,7 +97,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_224',
     33.758077,
@@ -97,7 +111,9 @@ INSERT INTO jars (
     0,
     3,
     0,
-    0
+    0,
+    16.8,
+    28.5
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -108,7 +124,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -121,7 +139,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_314',
     33.244488,
@@ -133,7 +153,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    1
+    1,
+    25.7,
+    25.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -144,7 +166,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -157,7 +181,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_388',
     33.284252,
@@ -169,7 +195,9 @@ INSERT INTO jars (
     0,
     2,
     3,
-    0
+    0,
+    16.7,
+    32.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -180,7 +208,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -193,7 +223,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_194',
     33.13923,
@@ -205,7 +237,9 @@ INSERT INTO jars (
     3,
     2,
     1,
-    0
+    0,
+    24.5,
+    26.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -216,7 +250,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -229,7 +265,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_537',
     33.34346,
@@ -241,7 +279,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    14.4,
+    28.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -252,7 +292,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -265,7 +307,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_197',
     33.708945,
@@ -277,7 +321,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    25.4,
+    25.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -288,7 +334,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -301,7 +349,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_218',
     33.82445,
@@ -313,7 +363,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    23.1,
+    23.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -324,7 +376,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -337,7 +391,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_203',
     33.724845,
@@ -349,7 +405,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    21.1,
+    23.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -360,7 +418,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -373,7 +433,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_239',
     33.500044,
@@ -385,7 +447,9 @@ INSERT INTO jars (
     0,
     1,
     0,
-    0
+    0,
+    25.1,
+    31.9
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -396,7 +460,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -409,7 +475,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'CT_055',
     33.244488,
@@ -421,7 +489,9 @@ INSERT INTO jars (
     1,
     1,
     2,
-    1
+    1,
+    27.4,
+    30.5
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -432,7 +502,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -445,7 +517,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_228',
     32.765009,
@@ -457,7 +531,9 @@ INSERT INTO jars (
     0,
     0,
     1,
-    1
+    1,
+    17.4,
+    21.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -468,7 +544,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -481,7 +559,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_367',
     33.477345,
@@ -493,7 +573,9 @@ INSERT INTO jars (
     0,
     1,
     0,
-    0
+    0,
+    21.9,
+    25.5
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -504,7 +586,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -517,7 +601,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_227',
     33.139319,
@@ -529,7 +615,9 @@ INSERT INTO jars (
     0,
     1,
     2,
-    0
+    0,
+    18.2,
+    25
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -540,7 +628,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -553,7 +643,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_343',
     33.663113,
@@ -565,7 +657,9 @@ INSERT INTO jars (
     1,
     0,
     0,
-    0
+    0,
+    18.6,
+    19.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -576,7 +670,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -589,7 +685,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_534',
     32.79932,
@@ -601,7 +699,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    21.8,
+    21.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -612,7 +712,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -625,7 +727,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_304',
     33.231733,
@@ -637,7 +741,9 @@ INSERT INTO jars (
     2,
     0,
     0,
-    0
+    0,
+    23.7,
+    30.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -648,7 +754,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -661,7 +769,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'CT_075',
     33.231833,
@@ -673,7 +783,9 @@ INSERT INTO jars (
     1,
     0,
     2,
-    3
+    3,
+    25.3,
+    33.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -684,7 +796,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -697,7 +811,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_505',
     32.87934,
@@ -709,7 +825,9 @@ INSERT INTO jars (
     0,
     1,
     1,
-    0
+    0,
+    25.3,
+    26.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -720,7 +838,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -733,7 +853,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_506',
     32.87934,
@@ -745,7 +867,9 @@ INSERT INTO jars (
     0,
     1,
     0,
-    0
+    0,
+    27.5,
+    27.5
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -756,7 +880,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -769,7 +895,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_519',
     32.8595428,
@@ -781,7 +909,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    24.1,
+    24.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -792,7 +922,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -805,7 +937,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_564',
     32.89126,
@@ -817,7 +951,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    23.6,
+    24.3
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -828,7 +964,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -841,7 +979,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_533',
     32.81553,
@@ -853,7 +993,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    19.5,
+    22.9
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -864,7 +1006,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -877,7 +1021,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_419',
     32.90317,
@@ -889,7 +1035,9 @@ INSERT INTO jars (
     0,
     1,
     0,
-    0
+    0,
+    20.9,
+    22.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -900,7 +1048,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -913,7 +1063,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_312',
     33.244488,
@@ -925,7 +1077,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    26.8,
+    27.6
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -936,7 +1090,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -949,7 +1105,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_344',
     33.24488,
@@ -961,7 +1119,9 @@ INSERT INTO jars (
     1,
     0,
     0,
-    0
+    0,
+    23.1,
+    30
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -972,7 +1132,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -985,7 +1147,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_345',
     33.194481,
@@ -997,7 +1161,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    24.4,
+    25.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1008,7 +1174,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1021,7 +1189,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_240',
     32.725244,
@@ -1033,7 +1203,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    23.2,
+    23.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1044,7 +1216,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1057,7 +1231,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_224',
     33.758077,
@@ -1069,7 +1245,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    18.3,
+    32.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1080,7 +1258,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1093,7 +1273,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_535',
     32.89754,
@@ -1105,7 +1287,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    20,
+    20
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1116,7 +1300,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1129,7 +1315,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_555',
     32.7227,
@@ -1141,7 +1329,9 @@ INSERT INTO jars (
     0,
     0,
     1,
-    0
+    0,
+    25.7,
+    31.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1152,7 +1342,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1165,7 +1357,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_378',
     32.72256,
@@ -1177,7 +1371,9 @@ INSERT INTO jars (
     0,
     0,
     1,
-    0
+    0,
+    20.1,
+    27.6
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1188,7 +1384,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1201,7 +1399,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_237',
     32.7993,
@@ -1213,7 +1413,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    13.6,
+    18.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1224,7 +1426,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1237,7 +1441,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_333',
     33.661482,
@@ -1249,7 +1455,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    23.2,
+    31.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1260,7 +1468,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1273,7 +1483,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_563',
     32.7227,
@@ -1285,7 +1497,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    20.2,
+    32.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1296,7 +1510,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1309,7 +1525,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_347',
     33.195594,
@@ -1321,7 +1539,9 @@ INSERT INTO jars (
     0,
     2,
     0,
-    0
+    0,
+    23.6,
+    30
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1332,7 +1552,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1345,7 +1567,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_493',
     32.745423,
@@ -1357,7 +1581,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    29.1,
+    29.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1368,7 +1594,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1381,7 +1609,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_496',
     32.79928,
@@ -1393,7 +1623,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    32.2,
+    32.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1404,7 +1636,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1417,7 +1651,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_325',
     33.131586,
@@ -1429,7 +1665,9 @@ INSERT INTO jars (
     0,
     3,
     0,
-    0
+    0,
+    15.7,
+    26.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1440,7 +1678,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1453,7 +1693,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_278',
     32.844563,
@@ -1465,7 +1707,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    16.2,
+    23.5
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1476,7 +1720,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1489,7 +1735,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_350',
     33.284954,
@@ -1501,7 +1749,9 @@ INSERT INTO jars (
     0,
     0,
     2,
-    0
+    0,
+    13.1,
+    17.9
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1512,7 +1762,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1525,7 +1777,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_241',
     32.791893,
@@ -1537,7 +1791,9 @@ INSERT INTO jars (
     0,
     0,
     3,
-    0
+    0,
+    13.8,
+    20.6
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1548,7 +1804,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1561,7 +1819,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_186',
     32.790868,
@@ -1573,7 +1833,9 @@ INSERT INTO jars (
     0,
     0,
     1,
-    0
+    0,
+    13.6,
+    19.9
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1584,7 +1846,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1597,7 +1861,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2021_008',
     33.17216,
@@ -1609,7 +1875,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    12.2,
+    20.9
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1620,7 +1888,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1633,7 +1903,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_570',
     33.7313,
@@ -1645,7 +1917,9 @@ INSERT INTO jars (
     0,
     0,
     2,
-    0
+    0,
+    9.1,
+    29.5
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1656,7 +1930,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1669,7 +1945,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_459',
     33.22996,
@@ -1681,7 +1959,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    12.7,
+    12.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1692,7 +1972,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1705,7 +1987,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_223',
     32.827383,
@@ -1717,7 +2001,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    19.4,
+    19.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1728,7 +2014,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1741,7 +2029,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_497',
     32.82577,
@@ -1753,7 +2043,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    1
+    1,
+    23.7,
+    23.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1764,7 +2056,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1777,7 +2071,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_181',
     32.83026,
@@ -1789,7 +2085,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    15.9,
+    17.9
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1800,7 +2098,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1813,7 +2113,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_202',
     32.840846,
@@ -1825,7 +2127,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    17,
+    17
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1836,7 +2140,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1849,7 +2155,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_168',
     32.835586,
@@ -1861,7 +2169,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    12.6,
+    15.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1872,7 +2182,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1885,7 +2197,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_195',
     32.83155,
@@ -1897,7 +2211,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    14.2,
+    22
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1908,7 +2224,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1921,7 +2239,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_263',
     32.831721,
@@ -1933,7 +2253,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    13.1,
+    22.6
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1944,7 +2266,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1957,7 +2281,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_231',
     32.83811,
@@ -1969,7 +2295,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    15,
+    29.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1980,7 +2308,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -1993,7 +2323,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_185',
     32.833412,
@@ -2005,7 +2337,9 @@ INSERT INTO jars (
     1,
     0,
     0,
-    0
+    0,
+    13,
+    23.4
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2016,7 +2350,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2029,7 +2365,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_184',
     32.836943,
@@ -2041,7 +2379,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    13.6,
+    23.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2052,7 +2392,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2065,7 +2407,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_232',
     32.830534,
@@ -2077,7 +2421,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    12,
+    17.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2088,7 +2434,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2101,7 +2449,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_234',
     32.825013,
@@ -2113,7 +2463,9 @@ INSERT INTO jars (
     1,
     0,
     0,
-    0
+    0,
+    11.8,
+    17.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2124,7 +2476,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2137,7 +2491,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_205',
     32.828458,
@@ -2149,7 +2505,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    3
+    3,
+    14.8,
+    18.3
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2160,7 +2518,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2173,7 +2533,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_281',
     32.835782,
@@ -2185,7 +2547,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    14.1,
+    18.1
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2196,7 +2560,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2209,7 +2575,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_290',
     32.836622,
@@ -2221,7 +2589,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    1
+    1,
+    16.4,
+    20.2
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2232,7 +2602,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2245,7 +2617,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_279',
     32.835313,
@@ -2257,7 +2631,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    10.3,
+    11.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2268,7 +2644,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2281,19 +2659,23 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     '23_HYB_001',
     32.824904,
     -80.124925,
     NULL,
-    16,
-    11,
+    19,
+    14,
     5,
     1,
     3,
     0,
-    0
+    2,
+    9.9,
+    22.6
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2304,7 +2686,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2317,7 +2701,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_106',
     33.155547,
@@ -2329,7 +2715,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    19.8,
+    23.7
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2340,7 +2728,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2353,7 +2743,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_042',
     32.61739,
@@ -2365,7 +2757,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    9.7,
+    23.3
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2376,7 +2770,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2389,7 +2785,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2021_004',
     32.87707,
@@ -2401,7 +2799,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    0
+    0,
+    13.8,
+    18.8
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2412,7 +2812,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2425,7 +2827,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_317',
     33.244449,
@@ -2437,7 +2841,9 @@ INSERT INTO jars (
     0,
     0,
     0,
-    1
+    1,
+    25.3,
+    33.3
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2448,7 +2854,9 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 INSERT INTO jars (
     jar_code,
@@ -2461,43 +2869,9 @@ INSERT INTO jars (
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
-) VALUES (
-    'Cray_2019_566',
-    32.8152,
-    -80.1167,
-    '2019-12-08',
-    2,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0
-) ON CONFLICT (jar_code) DO UPDATE SET
-    lat = EXCLUDED.lat,
-    lon = EXCLUDED.lon,
-    collection_date = EXCLUDED.collection_date,
-    total_crayfish = EXCLUDED.total_crayfish,
-    num_males = EXCLUDED.num_males,
-    num_females = EXCLUDED.num_females,
-    infected_bd = EXCLUDED.infected_bd,
-    infected_mc_l = EXCLUDED.infected_mc_l,
-    infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
-
-INSERT INTO jars (
-    jar_code,
-    lat,
-    lon,
-    collection_date,
-    total_crayfish,
-    num_males,
-    num_females,
-    infected_bd,
-    infected_mc_l,
-    infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     'Cray2019_326',
     33.1486,
@@ -2509,7 +2883,9 @@ INSERT INTO jars (
     0,
     1,
     0,
-    0
+    0,
+    18,
+    18
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -2520,16 +2896,56 @@ INSERT INTO jars (
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth,
+    min_size,
+    max_size
+) VALUES (
+    'Cray_2019_566',
+    32.8152,
+    -80.1167,
+    '2019-12-08',
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    26.9,
+    32.4
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;
 
 -- Statistics:
 -- Total jars created: 70
 -- Jars imported: 70
 -- Jars skipped: 0
--- Errors encountered: 3
+-- Errors encountered: 0
 
 
--- Errors (first 50):
---   Row 337: Invalid or missing coordinates (Spec: CT_336)
---   Row 338: Invalid or missing coordinates (Spec: CT_337)
---   Row 339: Invalid or missing coordinates (Spec: CT_338)

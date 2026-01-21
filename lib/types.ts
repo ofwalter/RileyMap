@@ -23,6 +23,8 @@ export interface Jar {
   infected_mc_l: number;
   infected_mc_s: number;
   infected_acanth: number;
+  min_size?: number | null;
+  max_size?: number | null;
   created_at?: string;
   updated_at?: string;
 }

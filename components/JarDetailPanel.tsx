@@ -44,6 +44,17 @@ export default function JarDetailPanel({ jar, onClose }: JarDetailPanelProps) {
 
         <div>
           <h3 className="text-sm font-semibold text-gray-500 uppercase mb-1">
+            Size Range
+          </h3>
+          <p className="text-sm text-gray-900 break-words">
+            {jar.min_size !== null && jar.min_size !== undefined && jar.max_size !== null && jar.max_size !== undefined
+              ? `${jar.min_size.toFixed(1)} - ${jar.max_size.toFixed(1)}`
+              : 'N/A'}
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-gray-500 uppercase mb-1">
             Collection Date
           </h3>
           <p className="text-sm text-gray-900">

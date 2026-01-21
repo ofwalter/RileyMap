@@ -277,6 +277,27 @@ function extractCoordinates(coordsStr) {
   return { lat: null, lon: null };
 }
 
+// Parse length value from CSV (handles various formats)
+function parseLength(lengthStr) {
+  if (!lengthStr || lengthStr.trim() === '') return null;
+  
+  lengthStr = lengthStr.trim();
+  
+  // Skip invalid markers
+  if (lengthStr.toUpperCase().includes('TOO DAMAGED')) return null;
+  
+  // Extract numeric value (handles formats like "20.1", "20.1mm", "20.1 mm", etc.)
+  const match = lengthStr.match(/(\d+\.?\d*)/);
+  if (match) {
+    const value = parseFloat(match[1]);
+    if (!isNaN(value) && value > 0) {
+      return value;
+    }
+  }
+  
+  return null;
+}
+
 // Group specimens into jars
 // A "jar" is identified by the Jar # column, or grouped by location (lat/lon) and collection date
 const jarGroups = new Map(); // key: jar_code -> jar data
@@ -421,11 +442,24 @@ for (let i = headerRowIndex + 1; i < lines.length; i++) {
       infected_mc_l: 0,
       infected_mc_s: 0,
       infected_acanth: 0,
+      min_size: null,
+      max_size: null,
       specimens: []
     });
   }
   
   const jar = jarGroups.get(jarKey);
+  
+  // Track size range
+  const sizeValue = parseLength(length);
+  if (sizeValue !== null) {
+    if (jar.min_size === null || sizeValue < jar.min_size) {
+      jar.min_size = sizeValue;
+    }
+    if (jar.max_size === null || sizeValue > jar.max_size) {
+      jar.max_size = sizeValue;
+    }
+  }
   
   // If jar_code is '?' or empty, try to use a better one from this row
   // Prefer jar codes that don't contain '?'
@@ -486,6 +520,8 @@ for (const [jarKey, jar] of jarGroups) {
   const infectedMcL = jar.infected_mc_l ?? 0;
   const infectedMcS = jar.infected_mc_s ?? 0;
   const infectedAcanth = jar.infected_acanth ?? 0;
+  const minSize = jar.min_size !== null && jar.min_size !== undefined ? jar.min_size : 'NULL';
+  const maxSize = jar.max_size !== null && jar.max_size !== undefined ? jar.max_size : 'NULL';
   
   // Handle N/A dates - store as NULL in database (will display as N/A in UI)
   const collectionDateValue = jar.collection_date === 'N/A' ? 'NULL' : `'${jar.collection_date}'`;
@@ -501,7 +537,9 @@ for (const [jarKey, jar] of jarGroups) {
     infected_bd,
     infected_mc_l,
     infected_mc_s,
-    infected_acanth
+    infected_acanth,
+    min_size,
+    max_size
 ) VALUES (
     '${escapedJarCode}',
     ${lat},
@@ -513,7 +551,9 @@ for (const [jarKey, jar] of jarGroups) {
     ${infectedBd},
     ${infectedMcL},
     ${infectedMcS},
-    ${infectedAcanth}
+    ${infectedAcanth},
+    ${minSize},
+    ${maxSize}
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -524,7 +564,9 @@ for (const [jarKey, jar] of jarGroups) {
     infected_bd = EXCLUDED.infected_bd,
     infected_mc_l = EXCLUDED.infected_mc_l,
     infected_mc_s = EXCLUDED.infected_mc_s,
-    infected_acanth = EXCLUDED.infected_acanth;`);
+    infected_acanth = EXCLUDED.infected_acanth,
+    min_size = EXCLUDED.min_size,
+    max_size = EXCLUDED.max_size;`);
 }
 
 // Write SQL file
