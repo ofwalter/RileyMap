@@ -465,7 +465,7 @@ export default function MapView() {
         style={{ height: '100%', width: '100%', marginTop: '48px' }}
         zoomControl={true}
         whenReady={() => setMapReady(true)}
-        maxBounds={mapConfig.maxBounds}
+        {...(mapConfig.maxBounds && { maxBounds: mapConfig.maxBounds })}
       >
         {/* More colorful tile layer */}
         <TileLayer
