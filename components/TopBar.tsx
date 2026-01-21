@@ -31,8 +31,7 @@ export default function TopBar({
   onInfoToggle,
   infoOpen,
 }: TopBarProps) {
-  const showJarNavigator = currentLocation !== null && jarsInLocation.length > 0;
-  // If no jar is selected, start at index 0 (first jar)
+  const showJarNavigator = currentJar !== null && jarsInLocation.length > 0;
   const effectiveIndex = currentJarIndex >= 0 ? currentJarIndex : 0;
   const canGoPrev = effectiveIndex > 0;
   const canGoNext = effectiveIndex < jarsInLocation.length - 1;
@@ -97,7 +96,7 @@ export default function TopBar({
         {showJarNavigator && (
           <div className="flex items-center gap-2 px-4 py-1 bg-gray-50 rounded-lg border border-gray-200">
             <span className="text-sm font-medium text-gray-700 min-w-[120px] text-center">
-              {currentLocation.name}
+              {currentLocation?.name || 'All Locations'}
             </span>
             <button
               onClick={() => onJarNavigate('prev')}

@@ -35,10 +35,16 @@ function parseCSVLine(line) {
 }
 
 // Parse date from formats: "May-1-2019", "4-May-2019", "Nov-18-19", "YYYY-MM-DD", etc.
+// Returns date string or "N/A" for N/A values
 function parseDate(dateStr) {
   if (!dateStr || dateStr.trim() === '') return null;
   
   dateStr = dateStr.trim();
+  
+  // Handle "N/A" as a valid value
+  if (dateStr.toUpperCase() === 'N/A' || dateStr.toUpperCase() === 'NA') {
+    return 'N/A';
+  }
   
   // Fix obvious year typos (e.g., "21019" -> "2019")
   dateStr = dateStr.replace(/21019/g, '2019');
@@ -363,7 +369,7 @@ for (let i = headerRowIndex + 1; i < lines.length; i++) {
     continue;
   }
   
-  // Parse date
+  // Parse date (allows "N/A")
   const collectionDate = parseDate(dateColl);
   if (!collectionDate) {
     errors.push({ row: i + 1, error: 'Invalid date format', spec: specNum, date: dateColl });
@@ -458,8 +464,8 @@ const sqlStatements = [];
 const skippedJars = [];
 
 for (const [jarKey, jar] of jarGroups) {
-  // Skip jars without essential data
-  if (!jar.lat || !jar.lon || !jar.collection_date || !jar.jar_code) {
+  // Skip jars without essential data (collection_date can be 'N/A')
+  if (!jar.lat || !jar.lon || !jar.jar_code || (jar.collection_date !== 'N/A' && !jar.collection_date)) {
     skippedJars.push({
       jar_code: jar.jar_code || jarKey,
       reason: 'Missing essential data'
@@ -481,6 +487,9 @@ for (const [jarKey, jar] of jarGroups) {
   const infectedMcS = jar.infected_mc_s ?? 0;
   const infectedAcanth = jar.infected_acanth ?? 0;
   
+  // Handle N/A dates - store as NULL in database (will display as N/A in UI)
+  const collectionDateValue = jar.collection_date === 'N/A' ? 'NULL' : `'${jar.collection_date}'`;
+  
   sqlStatements.push(`INSERT INTO jars (
     jar_code,
     lat,
@@ -497,7 +506,7 @@ for (const [jarKey, jar] of jarGroups) {
     '${escapedJarCode}',
     ${lat},
     ${lon},
-    '${jar.collection_date}',
+    ${collectionDateValue},
     ${totalCrayfish},
     ${numMales},
     ${numFemales},

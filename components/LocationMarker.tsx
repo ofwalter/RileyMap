@@ -47,9 +47,14 @@ export default function LocationMarker({ location, onClick, jars = [] }: Locatio
     return jars.some(jar => jar.location.id === location.id && jar.infected_acanth > 0);
   }, [jars, location.id]);
   
+  // Check if location contains CT68_81
+  const hasCT68_81 = useMemo(() => {
+    return jars.some(jar => jar.location.id === location.id && jar.jar_code === 'CT68_81');
+  }, [jars, location.id]);
+  
   // Create custom icon with jar count badge
   const markerIcon = useMemo(() => {
-    const color = hasAcanth ? '#dc2626' : '#2563eb';
+    const color = hasCT68_81 ? '#eab308' : hasAcanth ? '#dc2626' : '#2563eb';
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="51" viewBox="0 0 35 51">
         <!-- Marker pin -->
@@ -68,7 +73,7 @@ export default function LocationMarker({ location, onClick, jars = [] }: Locatio
       shadowUrl: iconShadow.src,
       shadowSize: [41, 41],
     });
-  }, [hasAcanth, jarCount]);
+  }, [hasCT68_81, hasAcanth, jarCount]);
   
   // Ensure location has valid coordinates
   if (!location || typeof location.lat !== 'number' || typeof location.lon !== 'number') {

@@ -1,6 +1,42 @@
 -- Imported from CSV: Crayfish Trog 2025-2026 - SORTED FOR MAP.csv
--- Generated: 2026-01-20T19:38:45.941Z
+-- Generated: 2026-01-21T04:05:14.605Z
 -- Groups individual specimens by jar code (or location/date) into jars
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'CT68_81',
+    32.8508,
+    -80.175,
+    '2023-09-26',
+    3,
+    2,
+    1,
+    0,
+    0,
+    2,
+    2
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
 
 INSERT INTO jars (
     jar_code,
@@ -23,8 +59,8 @@ INSERT INTO jars (
     4,
     7,
     0,
-    7,
-    3,
+    6,
+    4,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
@@ -88,7 +124,7 @@ INSERT INTO jars (
     infected_acanth
 ) VALUES (
     'Cray2019_314',
-    32.44488,
+    33.244488,
     -79.520632,
     '2019-05-20',
     1,
@@ -637,7 +673,7 @@ INSERT INTO jars (
     1,
     0,
     2,
-    2
+    3
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -673,7 +709,7 @@ INSERT INTO jars (
     0,
     1,
     1,
-    1
+    0
 ) ON CONFLICT (jar_code) DO UPDATE SET
     lat = EXCLUDED.lat,
     lon = EXCLUDED.lon,
@@ -1816,7 +1852,7 @@ INSERT INTO jars (
     infected_acanth
 ) VALUES (
     'Cray2019_168',
-    32.335586,
+    32.835586,
     -80.128438,
     '2019-05-02',
     5,
@@ -2103,6 +2139,42 @@ INSERT INTO jars (
     infected_mc_s,
     infected_acanth
 ) VALUES (
+    'Cray2019_205',
+    32.828458,
+    -80.13752,
+    '2019-04-25',
+    4,
+    2,
+    2,
+    0,
+    0,
+    0,
+    3
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
     'Cray2019_281',
     32.835782,
     -80.124814,
@@ -2184,6 +2256,42 @@ INSERT INTO jars (
     3,
     0,
     0,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    '23_HYB_001',
+    32.824904,
+    -80.124925,
+    NULL,
+    16,
+    11,
+    5,
+    1,
+    3,
     0,
     0
 ) ON CONFLICT (jar_code) DO UPDATE SET
@@ -2378,35 +2486,50 @@ INSERT INTO jars (
     infected_mc_s = EXCLUDED.infected_mc_s,
     infected_acanth = EXCLUDED.infected_acanth;
 
+INSERT INTO jars (
+    jar_code,
+    lat,
+    lon,
+    collection_date,
+    total_crayfish,
+    num_males,
+    num_females,
+    infected_bd,
+    infected_mc_l,
+    infected_mc_s,
+    infected_acanth
+) VALUES (
+    'Cray2019_326',
+    33.1486,
+    -79.507038,
+    '2019-05-23',
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+) ON CONFLICT (jar_code) DO UPDATE SET
+    lat = EXCLUDED.lat,
+    lon = EXCLUDED.lon,
+    collection_date = EXCLUDED.collection_date,
+    total_crayfish = EXCLUDED.total_crayfish,
+    num_males = EXCLUDED.num_males,
+    num_females = EXCLUDED.num_females,
+    infected_bd = EXCLUDED.infected_bd,
+    infected_mc_l = EXCLUDED.infected_mc_l,
+    infected_mc_s = EXCLUDED.infected_mc_s,
+    infected_acanth = EXCLUDED.infected_acanth;
+
 -- Statistics:
--- Total jars created: 66
--- Jars imported: 66
+-- Total jars created: 70
+-- Jars imported: 70
 -- Jars skipped: 0
--- Errors encountered: 24
+-- Errors encountered: 3
 
 
 -- Errors (first 50):
---   Row 304: Invalid or missing coordinates (Spec: CT_306)
---   Row 305: Invalid or missing coordinates (Spec: CT_307)
---   Row 306: Invalid or missing coordinates (Spec: CT_308)
---   Row 307: Invalid or missing coordinates (Spec: CT_309)
---   Row 318: Invalid date format (Spec: CT_320)
---   Row 319: Invalid date format (Spec: CT_321)
---   Row 320: Invalid date format (Spec: CT_322)
---   Row 321: Invalid date format (Spec: CT_323)
---   Row 322: Invalid date format (Spec: CT_324)
---   Row 323: Invalid date format (Spec: CT_325)
---   Row 324: Invalid date format (Spec: CT_326)
---   Row 325: Invalid date format (Spec: CT_327)
---   Row 326: Invalid date format (Spec: CT_328)
---   Row 327: Invalid date format (Spec: CT_329)
---   Row 328: Invalid date format (Spec: CT_330)
---   Row 329: Invalid date format (Spec: CT_331)
---   Row 330: Invalid date format (Spec: CT_332)
---   Row 331: Invalid date format (Spec: CT_333)
---   Row 332: Invalid date format (Spec: CT_334)
---   Row 333: Invalid date format (Spec: CT_335)
---   Row 334: Invalid or missing coordinates (Spec: CT_336)
---   Row 335: Invalid or missing coordinates (Spec: CT_337)
---   Row 336: Invalid or missing coordinates (Spec: CT_338)
---   Row 356: Invalid date format (Spec: CT_359)
+--   Row 337: Invalid or missing coordinates (Spec: CT_336)
+--   Row 338: Invalid or missing coordinates (Spec: CT_337)
+--   Row 339: Invalid or missing coordinates (Spec: CT_338)

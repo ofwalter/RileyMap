@@ -14,6 +14,7 @@ import InfoPanel from './InfoPanel';
 import { offsetDuplicateMarkers } from '@/lib/markerOffset';
 import { getSeasonFromDate } from '@/lib/utils';
 import { Season } from '@/lib/types';
+import { mapConfig } from '@/lib/mapConfig';
 
 // Fix for default marker icons in Next.js
 import L from 'leaflet';
@@ -80,8 +81,8 @@ export default function MapView() {
   const [jars, setJars] = useState<JarWithLocation[]>([]);
   const [selectedLocationId, setSelectedLocationId] = useState<string | null>(null);
   const [selectedJar, setSelectedJar] = useState<JarWithLocation | null>(null);
-  const [mapCenter, setMapCenter] = useState<[number, number]>([33.8361, -81.1637]); // South Carolina center
-  const [mapZoom, setMapZoom] = useState<number>(8); // Increased default zoom
+  const [mapCenter, setMapCenter] = useState<[number, number]>(mapConfig.defaultCenter);
+  const [mapZoom, setMapZoom] = useState<number>(mapConfig.defaultZoom);
   const [loading, setLoading] = useState(true);
   const [shouldUpdateMap, setShouldUpdateMap] = useState(false);
   const [mapReady, setMapReady] = useState(false);
@@ -105,7 +106,7 @@ export default function MapView() {
   // Calculate center of all markers, adjusted to be more to the right and down
   const calculateMarkerCenter = useMemo(() => {
     if (locations.length === 0) {
-      return [33.8361, -81.1637] as [number, number]; // Default SC center
+      return mapConfig.defaultCenter;
     }
     
     let totalLat = 0;
@@ -221,7 +222,7 @@ export default function MapView() {
   };
 
   const handleBack = () => {
-    const defaultCenter = locations.length > 0 ? calculateMarkerCenter : [33.8361, -81.1637] as [number, number];
+    const defaultCenter = locations.length > 0 ? calculateMarkerCenter : mapConfig.defaultCenter;
     
     if (navigationHistory.length === 0) {
       // If no history, go back to default view
@@ -269,7 +270,7 @@ export default function MapView() {
     setSelectedLocationId(null);
     setSelectedJar(null);
     // Use calculated center or default
-    const center = locations.length > 0 ? calculateMarkerCenter : [33.8361, -81.1637] as [number, number];
+    const center = locations.length > 0 ? calculateMarkerCenter : mapConfig.defaultCenter;
     setMapCenter(center);
     setMapZoom(8);
     setShouldUpdateMap(false);
@@ -277,33 +278,39 @@ export default function MapView() {
   };
 
   const handleJarNavigate = (direction: 'prev' | 'next') => {
-    if (!selectedLocationId) return;
+    const hasInfectionFilter = filters.bd || filters.mcL || filters.mcS || filters.acanth;
     
-    const jarsInLocation = jars.filter(jar => jar.location?.id === selectedLocationId);
-    if (jarsInLocation.length === 0) return;
+    let jarsToNavigate: JarWithLocation[];
+    if (hasInfectionFilter) {
+      jarsToNavigate = filteredJars;
+    } else {
+      if (!selectedLocationId) return;
+      jarsToNavigate = jars.filter(jar => jar.location?.id === selectedLocationId);
+    }
     
-    // If no jar is selected, start at index 0
+    if (jarsToNavigate.length === 0) return;
+    
     const currentIndex = selectedJar 
-      ? jarsInLocation.findIndex(j => j.id === selectedJar.id)
+      ? jarsToNavigate.findIndex(j => j.id === selectedJar.id)
       : -1;
     
     const effectiveIndex = currentIndex >= 0 ? currentIndex : 0;
     
     let newIndex: number;
     if (direction === 'prev') {
-      newIndex = effectiveIndex > 0 ? effectiveIndex - 1 : jarsInLocation.length - 1;
+      newIndex = effectiveIndex > 0 ? effectiveIndex - 1 : jarsToNavigate.length - 1;
     } else {
-      newIndex = effectiveIndex < jarsInLocation.length - 1 ? effectiveIndex + 1 : 0;
+      newIndex = effectiveIndex < jarsToNavigate.length - 1 ? effectiveIndex + 1 : 0;
     }
     
-    const newJar = jarsInLocation[newIndex];
+    const newJar = jarsToNavigate[newIndex];
     if (newJar) {
-      // Navigate to jar without adding to history (internal navigation)
-      // Always use original coordinates for navigation, not display coordinates
       setSelectedJar(newJar);
+      if (newJar.location) {
+        setSelectedLocationId(newJar.location.id);
+      }
       setMapCenter([newJar.lat, newJar.lon]);
       setMapZoom(14);
-      // Force map update by resetting the flag
       setShouldUpdateMap(false);
       setTimeout(() => setShouldUpdateMap(true), 10);
     }
@@ -372,15 +379,30 @@ export default function MapView() {
     return selectedLocationId ? locations.find(l => l.id === selectedLocationId) || null : null;
   }, [selectedLocationId, locations]);
 
+  const hasInfectionFilter = useMemo(() => {
+    return filters.bd || filters.mcL || filters.mcS || filters.acanth;
+  }, [filters]);
+
   const jarsInLocation = useMemo(() => {
     if (!selectedLocationId) return [];
-    return jars.filter(jar => jar.location?.id === selectedLocationId);
-  }, [selectedLocationId, jars]);
+    const locationJars = jars.filter(jar => jar.location?.id === selectedLocationId);
+    if (hasInfectionFilter) {
+      return filteredJars.filter(jar => jar.location?.id === selectedLocationId);
+    }
+    return locationJars;
+  }, [selectedLocationId, jars, filteredJars, hasInfectionFilter]);
+
+  const jarsForNavigation = useMemo(() => {
+    if (hasInfectionFilter) {
+      return filteredJars;
+    }
+    return jarsInLocation;
+  }, [hasInfectionFilter, filteredJars, jarsInLocation]);
 
   const currentJarIndex = useMemo(() => {
-    if (!selectedJar || !selectedLocationId) return -1;
-    return jarsInLocation.findIndex(j => j.id === selectedJar.id);
-  }, [selectedJar, selectedLocationId, jarsInLocation]);
+    if (!selectedJar) return -1;
+    return jarsForNavigation.findIndex(j => j.id === selectedJar.id);
+  }, [selectedJar, jarsForNavigation]);
 
   if (loading) {
     return (
@@ -416,7 +438,7 @@ export default function MapView() {
         onJarNavigate={handleJarNavigate}
         currentLocation={currentLocation}
         currentJar={selectedJar}
-        jarsInLocation={jarsInLocation}
+        jarsInLocation={jarsForNavigation}
         currentJarIndex={currentJarIndex}
         canGoBack={navigationHistory.length > 0 || selectedLocationId !== null || selectedJar !== null}
         onFilterToggle={() => setFiltersOpen(!filtersOpen)}
@@ -443,7 +465,7 @@ export default function MapView() {
         style={{ height: '100%', width: '100%', marginTop: '48px' }}
         zoomControl={true}
         whenReady={() => setMapReady(true)}
-        maxBounds={[[32, -84], [36, -78]]} // Constrain to South Carolina area
+        maxBounds={mapConfig.maxBounds}
       >
         {/* More colorful tile layer */}
         <TileLayer

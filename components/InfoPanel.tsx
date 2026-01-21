@@ -15,8 +15,8 @@ export default function InfoPanel({ isOpen, onClose }: InfoPanelProps) {
         onClick={onClose}
       />
       
-      <div className="absolute top-12 right-4 z-[2001] bg-white rounded-lg shadow-xl border border-gray-200 w-96 max-h-[80vh] overflow-y-auto p-4">
-        <div className="flex justify-between items-center mb-4 sticky top-0 bg-white pt-2 pb-2">
+      <div className="absolute top-12 right-4 z-[2001] bg-white rounded-lg shadow-xl border border-gray-200 w-96 max-h-[80vh] overflow-y-auto">
+        <div className="flex justify-between items-center p-4 pb-4 border-b border-gray-200">
           <h3 className="text-lg font-semibold text-gray-900">About This Project</h3>
           <button
             onClick={onClose}
@@ -40,18 +40,7 @@ export default function InfoPanel({ isOpen, onClose }: InfoPanelProps) {
           </button>
         </div>
 
-        <div className="space-y-4 text-sm text-gray-700">
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Project Overview</h4>
-            <p>
-              The Crayfish Dissection Mapping Application is a scientific data visualization tool 
-              designed to map and analyze crayfish dissection data collected from various locations 
-              in South Carolina. This application provides researchers with an interactive map interface 
-              to explore crayfish populations, infection rates, and demographic data across different 
-              collection sites and seasons.
-            </p>
-          </div>
-
+        <div className="p-4 space-y-4 text-sm text-gray-700">
           <div>
             <h4 className="font-semibold text-gray-900 mb-2">How to Use the Map</h4>
             <ul className="space-y-2 list-disc list-inside">
@@ -85,25 +74,6 @@ export default function InfoPanel({ isOpen, onClose }: InfoPanelProps) {
                 <strong>Go Back:</strong> Use the back arrow to return to the previous view level.
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Infection Types</h4>
-            <ul className="space-y-1 list-disc list-inside">
-              <li><strong>BD:</strong> Bacterial Disease</li>
-              <li><strong>mc(L):</strong> Microsporidia (Large spores)</li>
-              <li><strong>mc(s):</strong> Microsporidia (Small spores)</li>
-              <li><strong>acanth:</strong> Acanthocephala parasites</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Data Source</h4>
-            <p>
-              Data is collected from crayfish dissection specimens across South Carolina. Each jar 
-              represents a collection of specimens from a specific location and date, with detailed 
-              counts of crayfish demographics and infection rates.
-            </p>
           </div>
         </div>
       </div>

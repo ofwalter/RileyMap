@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS jars (
     location_id UUID REFERENCES locations(id) ON DELETE SET NULL,
     lat FLOAT NOT NULL,
     lon FLOAT NOT NULL,
-    collection_date DATE NOT NULL,
+    collection_date DATE,
     total_crayfish INT NOT NULL DEFAULT 0,
     num_males INT NOT NULL DEFAULT 0,
     num_females INT NOT NULL DEFAULT 0,
