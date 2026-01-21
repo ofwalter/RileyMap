@@ -214,6 +214,11 @@ export default function MapView() {
       }]);
     }
     
+    // Set selectedLocationId if jar has a location (for proper navigation)
+    if (jar.location?.id && !selectedLocationId) {
+      setSelectedLocationId(jar.location.id);
+    }
+    
     // Always use original coordinates for navigation, not display coordinates
     setSelectedJar(jar);
     setMapCenter([jar.lat, jar.lon]);
@@ -279,13 +284,18 @@ export default function MapView() {
 
   const handleJarNavigate = (direction: 'prev' | 'next') => {
     const hasInfectionFilter = filters.bd || filters.mcL || filters.mcS || filters.acanth;
+    const showLocationMarkers = mapZoom < 11;
     
     let jarsToNavigate: JarWithLocation[];
     if (hasInfectionFilter) {
       jarsToNavigate = filteredJars;
-    } else {
-      if (!selectedLocationId) return;
+    } else if (selectedLocationId) {
       jarsToNavigate = jars.filter(jar => jar.location?.id === selectedLocationId);
+    } else if (!showLocationMarkers) {
+      // If no selectedLocationId but we're viewing jars (zoom >= 11), use all filtered jars
+      jarsToNavigate = filteredJars;
+    } else {
+      return;
     }
     
     if (jarsToNavigate.length === 0) return;
@@ -400,8 +410,15 @@ export default function MapView() {
     if (hasInfectionFilter) {
       return filteredJars;
     }
+    if (selectedLocationId) {
+      return jarsInLocation;
+    }
+    // If no selectedLocationId but we're viewing jars (zoom >= 11), use currently visible jars
+    if (!showLocationMarkers && jarsToShow.length > 0) {
+      return jarsToShow;
+    }
     return jarsInLocation;
-  }, [hasInfectionFilter, filteredJars, jarsInLocation]);
+  }, [hasInfectionFilter, filteredJars, jarsInLocation, selectedLocationId, showLocationMarkers, jarsToShow]);
 
   const currentJarIndex = useMemo(() => {
     if (!selectedJar) return -1;
