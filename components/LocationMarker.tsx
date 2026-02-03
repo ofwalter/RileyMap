@@ -58,8 +58,8 @@ export default function LocationMarker({ location, onClick, jars = [] }: Locatio
         <path fill="${color}" d="M17.5 0C7.8 0 0 7.8 0 17.5c0 11.3 17.5 33.5 17.5 33.5S35 28.8 35 17.5C35 7.8 27.2 0 17.5 0z"/>
         <circle cx="17.5" cy="17.5" r="8" fill="white"/>
         <!-- Count badge -->
-        <circle cx="28" cy="8" r="7" fill="white" stroke="${color}" stroke-width="2"/>
-        <text x="28" y="12" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="${color}" text-anchor="middle">${totalCrayfish}</text>
+        <circle cx="28" cy="8" r="8.5" fill="white" stroke="${color}" stroke-width="2"/>
+        <text x="28" y="11.5" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="${color}" text-anchor="middle">${totalCrayfish}</text>
       </svg>
     `;
     return new L.Icon({
