@@ -37,9 +37,11 @@ const redIcon = (() => {
 })();
 
 export default function LocationMarker({ location, onClick, jars = [] }: LocationMarkerProps) {
-  // Count jars in this location
-  const jarCount = useMemo(() => {
-    return jars.filter(jar => jar.location?.id === location.id).length;
+  // Sum total crayfish from all jars in this location
+  const totalCrayfish = useMemo(() => {
+    return jars
+      .filter(jar => jar.location?.id === location.id)
+      .reduce((sum, jar) => sum + (jar.total_crayfish || 0), 0);
   }, [jars, location.id]);
   
   // Check if any jar in this location has acanth
@@ -47,14 +49,9 @@ export default function LocationMarker({ location, onClick, jars = [] }: Locatio
     return jars.some(jar => jar.location.id === location.id && jar.infected_acanth > 0);
   }, [jars, location.id]);
   
-  // Check if location contains CT68_81
-  const hasCT68_81 = useMemo(() => {
-    return jars.some(jar => jar.location.id === location.id && jar.jar_code === 'CT68_81');
-  }, [jars, location.id]);
-  
-  // Create custom icon with jar count badge
+  // Create custom icon with crayfish count badge
   const markerIcon = useMemo(() => {
-    const color = hasCT68_81 ? '#eab308' : hasAcanth ? '#dc2626' : '#2563eb';
+    const color = hasAcanth ? '#dc2626' : '#2563eb';
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="51" viewBox="0 0 35 51">
         <!-- Marker pin -->
@@ -62,7 +59,7 @@ export default function LocationMarker({ location, onClick, jars = [] }: Locatio
         <circle cx="17.5" cy="17.5" r="8" fill="white"/>
         <!-- Count badge -->
         <circle cx="28" cy="8" r="7" fill="white" stroke="${color}" stroke-width="2"/>
-        <text x="28" y="12" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="${color}" text-anchor="middle">${jarCount}</text>
+        <text x="28" y="12" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="${color}" text-anchor="middle">${totalCrayfish}</text>
       </svg>
     `;
     return new L.Icon({
@@ -73,7 +70,7 @@ export default function LocationMarker({ location, onClick, jars = [] }: Locatio
       shadowUrl: iconShadow.src,
       shadowSize: [41, 41],
     });
-  }, [hasCT68_81, hasAcanth, jarCount]);
+  }, [hasAcanth, totalCrayfish]);
   
   // Ensure location has valid coordinates
   if (!location || typeof location.lat !== 'number' || typeof location.lon !== 'number') {
